@@ -17,6 +17,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+/craco.config.js
+/tailwind.config.js
+
 
 npm-debug.log*
 yarn-debug.log*
