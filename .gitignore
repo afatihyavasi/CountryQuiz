@@ -17,8 +17,11 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/craco.config.js
-/tailwind.config.js
+
+
+#configs
+craco.config.js
+tailwind.config.js
 
 
 npm-debug.log*

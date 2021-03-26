@@ -7,6 +7,6 @@
 .container {
     @apply
     bg-white
-    w-96 h-96
+    w-96 h-96 p-8
     rounded shadow
 }
