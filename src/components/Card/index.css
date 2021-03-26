@@ -1,0 +1,12 @@
+
+.card h1 {
+    @apply text-4xl
+    my-5
+}
+
+.container {
+    @apply
+    bg-white
+    w-96 h-96
+    rounded shadow
+}
