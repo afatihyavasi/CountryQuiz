@@ -1,10 +1,20 @@
-import {createContext, useState} from 'react';
-import useFetch from '../hooks/useFetch'
+import {createContext, useState, useEffect} from 'react';
+
 
 const CountryContext = createContext();
 
+const url = 'https://restcountries.eu/rest/v2/all';
+
 const CountryContextProvider = ({children}) => {
 
+
+    useEffect(() => {
+        fetch(url)
+            .then(response => response.json())
+            .then(response => setCountries(response))
+    }, [])
+
+    const [countries, setCountries] = useState();
     const [question, setQuestion] = useState();
     const [options, setOptions] = useState([
         {
@@ -24,16 +34,38 @@ const CountryContextProvider = ({children}) => {
             status: false,
         },
     ]);
+    const [randomCountry, setRandomCountry] = useState();
 
-    const url = 'https://restcountries.eu/rest/v2/all';
-    const countries = useFetch(url)
+    const pickRandomCountry = (countryList) => {
+        const randomNumber = Math.floor(Math.random() * countryList.length);
+        return countryList.forEach((country, index) => {
+            if (index === randomNumber) setRandomCountry(country);
+        });
+    }
+
+    const randomQuestion = () => {
+        const randomBoolean = Math.random() < 0.5;
+        randomBoolean ? countryCapitalQuestion() : countryFlagQuestion();
+    }
+
+    const countryCapitalQuestion = () => {
+
+
+    }
+
+    const  countryFlagQuestion = () => {
+
+    }
 
     const values = {
         countries,
         question,
         options,
         setQuestion,
-        setOptions
+        setOptions,
+        pickRandomCountry,
+        randomCountry,
+        setRandomCountry
     }
 
     return (

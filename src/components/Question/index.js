@@ -1,17 +1,26 @@
-import {useContext} from 'react';
+import {useContext,useEffect,useState} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
-
-
-
 
 
 
 const Question = () => {
 
-    const {question} = useContext(CountryContext)
+    const {countries, randomCountry,pickRandomCountry,setRandomCountry} = useContext(CountryContext);
+
+    useEffect(() => {
+        pickRandomCountry(countries);
+    },[]);
+
+
+
+
+
+
+
+
     return (
         <div>
-            {question}
+            {randomCountry ? randomCountry.name : null}
         </div>
     );
 };

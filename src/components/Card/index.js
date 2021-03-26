@@ -9,14 +9,14 @@ import Option from "../Option";
 const Card = () => {
     const {countries, setOptions, setQuestion,question} = useContext(CountryContext);
 
-
     if (!countries) return <div>Loading..</div>
 
     return (
         <div className="card">
             <h1>Country Quiz</h1>
             <div className="container">
-                {countries}
+                <Question/>
+
             </div>
         </div>
     );
