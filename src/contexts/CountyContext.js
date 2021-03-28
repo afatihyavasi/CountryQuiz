@@ -5,7 +5,13 @@ const CountryContext = createContext();
 //API URL
 const url = 'https://restcountries.eu/rest/v2/all';
 
+
 const CountryContextProvider = ({children}) => {
+    //States
+    const [countries, setCountries] = useState();
+    const [question, setQuestion] = useState();
+    const [options, setOptions] = useState([]);
+    const [randomCountry, setRandomCountry] = useState();
 
     // Get country list with fetch.
     useEffect(() => {
@@ -14,47 +20,38 @@ const CountryContextProvider = ({children}) => {
             .then(response => setCountries(response))
     }, [])
 
-    //States
-    const [countries, setCountries] = useState();
-    const [question, setQuestion] = useState();
-    const [options, setOptions] = useState();
-    const [randomCountry, setRandomCountry] = useState();
+
 
     //Picking random country in the countries
     const pickRandomCountry = (countryList) => {
         const randomNumber = Math.floor(Math.random() * countryList.length);
         countryList.forEach((country, index) => {
-            if (index === randomNumber) {
-                setRandomCountry(country);
-                return country;
-            }
+            if (index === randomNumber) setRandomCountry(country);
         })
     };
 
+
+    const createFalseOptions = () => {
+        const options = [];
+        const randomNumber = Math.floor(Math.random() * countries.length);
+        countries.forEach((country, index) => {
+            if (index === randomNumber && randomCountry.name !== country.name)options.push(country.name)
+        })
+        return options[0];
+    }
+
     //Generate random question . Ask country capital or country flag.
     const randomQuestion = () => {
-        const randomBoolean = Math.random() < 1; //TODO:change value 1 to 0.5
+        const randomBoolean = Math.random() < 0.5; //TODO:change value 1 to 0.5
         randomBoolean ? countryCapitalQuestion() : countryFlagQuestion();
     }
 
-    const countryCapitalQuestion = () => {
-        setQuestion(`${randomCountry.capital} is the capital of`);
-        const optionsQuestion = [
-            {
-                name: randomCountry.name,
-                truthy: true,
-            }
-        ]
-        for (let i = 0; i < 3; i++) {
-            let questionOptionFalseCountry = pickRandomCountry(countries);
-            if(questionOptionFalseCountry===randomCountry)questionOptionFalseCountry = pickRandomCountry(countries);
 
-            optionsQuestion.push({
-                name: questionOptionFalseCountry.name,
-                truthy: false
-            })
-        }
-        setOptions(optionsQuestion);
+    const countryCapitalQuestion = () => {
+        //TODO:Div icinde ve class ozellikleri vererek soruyu gonder.
+
+        setQuestion(`${randomCountry.capital} is the capital of`);
+        createAnotherOptions();
     }
 
     const countryFlagQuestion = () => {
@@ -62,20 +59,30 @@ const CountryContextProvider = ({children}) => {
             <img src={randomCountry.flag} alt="country-flag"/>
             <h5>Which country does this flag belong to?</h5>
         </>)
-        const optionsQuestion = [
+        createAnotherOptions();
+    }
+
+    const createAnotherOptions = () => {
+        //Correct option
+        setOptions([
             {
                 name: randomCountry.name,
                 truthy: true,
-            }
-        ]
-        for (let i = 0; i < 3; i++) {
-            pickRandomCountry(countries);
-            optionsQuestion.push({
-                name: randomCountry.name,
+            } ,
+            {
+                name : createFalseOptions(),
                 truthy: false
-            })
-        }
-        setOptions(optionsQuestion);
+            },
+            {
+                name : createFalseOptions(),
+                truthy: false
+            },
+            {
+                name : createFalseOptions(),
+                truthy: false
+            }
+
+        ])
     }
 
     const values = {
@@ -87,7 +94,8 @@ const CountryContextProvider = ({children}) => {
         pickRandomCountry,
         randomCountry,
         setRandomCountry,
-        randomQuestion
+        randomQuestion,
+        createFalseOptions,
     }
 
     return (

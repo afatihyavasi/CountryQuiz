@@ -1,7 +1,16 @@
-const Option = ({option}) => {
+import {useContext, useEffect} from 'react';
+import {CountryContext} from "../../contexts/CountyContext";
+
+
+const Option = ({children}) => {
+
+
+
+
+
     return (
         <div>
-            <button className="selection">{option}</button>
+            {children}
         </div>
     );
 };
