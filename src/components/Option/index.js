@@ -1,16 +1,14 @@
-import {useContext, useEffect} from 'react';
-import {CountryContext} from "../../contexts/CountyContext";
 
+import './index.css';
 
-const Option = ({children}) => {
-
+const Option = ({handleClick,children,bg,truthy}) => {
 
 
 
 
     return (
-        <div>
-            {children}
+        <div className='option'>
+            <button className={truthy ? bg : ''} onClick={handleClick}>{children}</button>
         </div>
     );
 };

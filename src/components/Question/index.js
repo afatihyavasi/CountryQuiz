@@ -1,16 +1,11 @@
 import {useContext, useEffect} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
 
-
-const Question = ({country}) => {
-
-    const {randomQuestion,question,createFalseOptions,options,setOptions,randomCountry} = useContext(CountryContext)
-
+const Question = () => {
+    const {randomQuestion,question} = useContext(CountryContext)
     useEffect(() => {
         randomQuestion();
-
     },[])
-
 
     if(!question) return <div>Loading</div>;
 

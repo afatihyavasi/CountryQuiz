@@ -5,7 +5,6 @@ const CountryContext = createContext();
 //API URL
 const url = 'https://restcountries.eu/rest/v2/all';
 
-
 const CountryContextProvider = ({children}) => {
     //States
     const [countries, setCountries] = useState();
@@ -20,8 +19,6 @@ const CountryContextProvider = ({children}) => {
             .then(response => setCountries(response))
     }, [])
 
-
-
     //Picking random country in the countries
     const pickRandomCountry = (countryList) => {
         const randomNumber = Math.floor(Math.random() * countryList.length);
@@ -30,7 +27,7 @@ const CountryContextProvider = ({children}) => {
         })
     };
 
-
+    // Create a false option.
     const createFalseOptions = () => {
         const options = [];
         const randomNumber = Math.floor(Math.random() * countries.length);
@@ -42,16 +39,14 @@ const CountryContextProvider = ({children}) => {
 
     //Generate random question . Ask country capital or country flag.
     const randomQuestion = () => {
-        const randomBoolean = Math.random() < 0.5; //TODO:change value 1 to 0.5
+        const randomBoolean = Math.random() < 0.5;
         randomBoolean ? countryCapitalQuestion() : countryFlagQuestion();
+
     }
 
-
     const countryCapitalQuestion = () => {
-        //TODO:Div icinde ve class ozellikleri vererek soruyu gonder.
-
-        setQuestion(`${randomCountry.capital} is the capital of`);
-        createAnotherOptions();
+        setQuestion(<div><strong>{randomCountry.capital}</strong> is the capital of</div>);
+        createOptions();
     }
 
     const countryFlagQuestion = () => {
@@ -59,11 +54,11 @@ const CountryContextProvider = ({children}) => {
             <img src={randomCountry.flag} alt="country-flag"/>
             <h5>Which country does this flag belong to?</h5>
         </>)
-        createAnotherOptions();
+        createOptions();
     }
 
-    const createAnotherOptions = () => {
-        //Correct option
+    //Create options.
+    const createOptions = () => {
         setOptions([
             {
                 name: randomCountry.name,
@@ -95,7 +90,6 @@ const CountryContextProvider = ({children}) => {
         randomCountry,
         setRandomCountry,
         randomQuestion,
-        createFalseOptions,
     }
 
     return (
