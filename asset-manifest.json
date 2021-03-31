@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/CountyQuiz/static/css/main.a8800415.chunk.css",
+    "main.js": "/CountyQuiz/static/js/main.aff3ae5d.chunk.js",
+    "main.js.map": "/CountyQuiz/static/js/main.aff3ae5d.chunk.js.map",
+    "runtime-main.js": "/CountyQuiz/static/js/runtime-main.c0d3f639.js",
+    "runtime-main.js.map": "/CountyQuiz/static/js/runtime-main.c0d3f639.js.map",
+    "static/js/2.4160307c.chunk.js": "/CountyQuiz/static/js/2.4160307c.chunk.js",
+    "static/js/2.4160307c.chunk.js.map": "/CountyQuiz/static/js/2.4160307c.chunk.js.map",
+    "index.html": "/CountyQuiz/index.html",
+    "static/css/main.a8800415.chunk.css.map": "/CountyQuiz/static/css/main.a8800415.chunk.css.map",
+    "static/js/2.4160307c.chunk.js.LICENSE.txt": "/CountyQuiz/static/js/2.4160307c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0d3f639.js",
+    "static/js/2.4160307c.chunk.js",
+    "static/css/main.a8800415.chunk.css",
+    "static/js/main.aff3ae5d.chunk.js"
+  ]
+}
