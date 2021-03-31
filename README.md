@@ -52,7 +52,7 @@ Your app is ready to be deployed!
 
 ### `npm deploy`
 
-Deploy the Github pages.
+Deploy the Github pages. The ```predeploy``` script will run automatically before deploy is run.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
