@@ -5,6 +5,7 @@
 ## Overview
 > [Live Demo](http://afatihyavasi.me/CountryQuiz/)<br>
 
+Asks questions about flags or capitals of random countries. Get countries with API and choose someone then generate random question about country.
 
 
 ## Built With
