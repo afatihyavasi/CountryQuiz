@@ -8,7 +8,7 @@ const Question = () => {
         randomQuestion();
     }, [])
 
-    if (!question) return <div>Loading</div>;
+    if (!question) return <div>Loading...</div>;
 
     return (
         <div className="question">

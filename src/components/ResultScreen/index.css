@@ -8,7 +8,7 @@
 }
 
 .result-screen h4{
-    @apply text-2xl w-3/5 mx-auto
+    @apply  w-3/5 mx-auto p-2
     bg-yellow-100 rounded  sm:w-full sm:py-3
 }
 span{
@@ -16,7 +16,7 @@ span{
 }
 
 .result-screen button{
-    @apply mt-10 bg-pink-200 rounded text-pink-500 font-bold p-4 w-2/5 mx-auto
+    @apply mt-10 bg-pink-200 rounded text-pink-500 font-bold py-2 w-3/5 mx-auto
     transition
     hover:bg-pink-400
     hover:text-white

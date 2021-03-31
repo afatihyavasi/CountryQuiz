@@ -22,6 +22,8 @@ h1 {
     text-center text-yellow-600 font-bold
     py-2 px-5
     transition
+    disabled:opacity-20
+    disabled:cursor-not-allowed
     hover:bg-yellow-300
     focus-within:outline-none
     hover:text-white

@@ -9,7 +9,7 @@ const App = () => {
 
     const {countries, questionIndex} = useContext(CountryContext);
 
-    if (!countries) return <div>YUKLENIYOR...</div>
+    if (!countries) return <div>Loading...</div>
 
     return (
         <div className='app'>

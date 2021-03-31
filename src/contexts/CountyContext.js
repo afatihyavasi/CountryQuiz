@@ -14,6 +14,7 @@ const CountryContextProvider = ({children}) => {
     const [questionIndex, setQuestionIndex] = useState(1);
     const [trueCounter, setTrueCounter] = useState(0);
     const [backgroundColor, setBackgroundColor] = useState('');
+    const [disable, setDisable] = useState(true);
 
     // Get country list with fetch.
     useEffect(() => {
@@ -87,6 +88,7 @@ const CountryContextProvider = ({children}) => {
     // Generate new question.
     const generateNewQuestion = () => {
         setBackgroundColor('');
+        setDisable(!disable);
         setQuestionIndex(questionIndex + 1);
         pickRandomCountry(countries);
         randomQuestion();
@@ -96,7 +98,7 @@ const CountryContextProvider = ({children}) => {
     const values = {
         countries, question, options, setQuestion, setOptions, pickRandomCountry, randomCountry,
         setRandomCountry, randomQuestion, trueCounter, setTrueCounter, questionIndex, setQuestionIndex,
-        backgroundColor, setBackgroundColor, generateNewQuestion
+        backgroundColor, setBackgroundColor, generateNewQuestion,disable,setDisable
     }
 
     return (

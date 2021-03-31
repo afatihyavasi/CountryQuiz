@@ -1,4 +1,4 @@
-import {useContext, useEffect} from 'react';
+import {useContext, useEffect,useState} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
 import './index.css';
 import Question from "../Question";
@@ -9,8 +9,9 @@ const Card = () => {
     const {
         pickRandomCountry, countries, randomCountry,
         options, trueCounter, setTrueCounter,
-        setBackgroundColor, generateNewQuestion, backgroundColor,questionIndex
+        setBackgroundColor, generateNewQuestion, backgroundColor,disable,setDisable
     } = useContext(CountryContext);
+
 
 
     useEffect(() => {
@@ -20,6 +21,7 @@ const Card = () => {
     }, [options]);
 
     const handleClick = (truthy, e) => {
+        setDisable(!disable);
         if (truthy) {
             e.target.className = 'true-option';
             setTrueCounter(trueCounter + 1)
@@ -31,7 +33,7 @@ const Card = () => {
         }
     }
 
-    if (!randomCountry) return <div>Loading</div>;
+    if (!randomCountry) return <div>Loading...</div>;
 
     return (
         <div className="card">
@@ -47,7 +49,7 @@ const Card = () => {
                         </Option>)
                 }
                 <div className="button-container">
-                    <button onClick={generateNewQuestion}>Next</button>
+                    <button disabled={disable} onClick={generateNewQuestion}>Next</button>
                 </div>
 
             </div>
