@@ -77,7 +77,8 @@ const CountryContextProvider = ({children}) => {
                 truthy: false
             }
 
-        ])
+        ].sort(() => .5 - Math.random()));
+
     }
 
     const values = {

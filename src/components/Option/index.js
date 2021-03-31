@@ -1,10 +1,6 @@
-
 import './index.css';
 
-const Option = ({handleClick,children,bg,truthy}) => {
-
-
-
+const Option = ({children,bg,truthy,handleClick}) => {
 
     return (
         <div className='option'>

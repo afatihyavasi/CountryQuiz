@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from 'react';
+import {useContext, useEffect, useState, meme} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
 import './index.css';
 import Question from "../Question";
@@ -18,16 +18,6 @@ const Card = () => {
 
     }, [options]);
 
-    //TODO:Build loaders with HOC.
-
-    if (!randomCountry) return <div>Loading</div>;
-
-    const generateNewQuestion = () => {
-        setBackgroundColor('');
-        pickRandomCountry(countries);
-        randomQuestion();
-    }
-
     const handleClick = (truthy, e) => {
         if (truthy) e.target.className = 'bg-green-500'
         else {
@@ -38,6 +28,15 @@ const Card = () => {
         }
     }
 
+    //TODO:Build loaders with HOC.
+
+    if (!randomCountry) return <div>Loading</div>;
+
+    const generateNewQuestion = () => {
+        setBackgroundColor('');
+        pickRandomCountry(countries);
+        randomQuestion();
+    }
 
     return (
         <div className="card">
@@ -46,12 +45,13 @@ const Card = () => {
                 <Question/>
                 {
                     options
-                        .sort(() => .5 - Math.random())
                         .map(option => <Option key={option.name}
                                                bg={backgroundColor}
                                                handleClick={(e) => handleClick(option.truthy, e)}
                                                truthy={option.truthy}>{option.name}
                         </Option>)
+
+
                 }
                 <button onClick={generateNewQuestion}>Ok</button>
             </div>
