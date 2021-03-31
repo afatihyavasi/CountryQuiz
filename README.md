@@ -12,16 +12,16 @@
 
 To clone and run this application, you'll need Git and Node.js (which comes with npm) installed on your computer. From your command line
 
-```
-# Clone this repository
-$ git clone https://github.com/gitraya/github-jobs.git
 
-# Install dependencies
-$ npm install
+### Clone this repository
+```$ git clone https://github.com/afatihyavasi/CountyQuiz.git```
 
-# Run the app
-$ npm start
-```
+### Install dependencies
+```$ npm install```
+
+### Run the app
+```$ npm start```
+
 
 ## Available Scripts
 
