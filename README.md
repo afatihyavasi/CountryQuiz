@@ -2,6 +2,9 @@
 
 ![Browser=Safari, Theme=Dark](https://user-images.githubusercontent.com/22716658/113213968-82555900-9281-11eb-8b3b-6a94a40a8636.png)
 
+## Live Demo
+> [Demo](http://afatihyavasi.me/CountryQuiz/)<br>
+
 ## Overview
 > [Live Demo](http://afatihyavasi.me/CountryQuiz/)<br>
 
