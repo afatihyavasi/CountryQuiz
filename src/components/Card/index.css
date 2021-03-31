@@ -1,7 +1,6 @@
 .card{
     @apply w-screen bg-white
     rounded shadow
-
 }
 
 h1 {

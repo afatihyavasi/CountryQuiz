@@ -1,3 +1,11 @@
 .question-container{
-    @apply  bg-red-200
+    @apply mx-3 mb-6 bg-pink-50 py-5 rounded text-pink-600 font-bold text-center
+}
+
+.image-container{
+    @apply flex justify-center mb-6 w-full h-full
+}
+
+.question img{
+    @apply w-4/5 h-4/5 rounded shadow
 }

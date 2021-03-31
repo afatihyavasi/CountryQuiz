@@ -1,5 +1,6 @@
 import {useContext} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
+import './index.css';
 
 
 const ResultScreen = () => {
@@ -12,9 +13,10 @@ const ResultScreen = () => {
         setTrueCounter(0);
     }
     return (
-        <div>
-            <button onClick={handleClick}>GAME OVER !</button>
-            <div>{trueCounter}/5</div>
+        <div className='result-screen'>
+            <img src='/celebrate.svg' alt='score'/>
+            <h4 className="score-text">You got <span>{trueCounter}</span> correct answer</h4>
+            <button onClick={handleClick}>PLAY AGAIN</button>
         </div>
     );
 };

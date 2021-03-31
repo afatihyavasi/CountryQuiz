@@ -9,7 +9,7 @@ const Card = () => {
     const {
         pickRandomCountry, countries, randomCountry,
         options, trueCounter, setTrueCounter,
-        setBackgroundColor, generateNewQuestion, backgroundColor
+        setBackgroundColor, generateNewQuestion, backgroundColor,questionIndex
     } = useContext(CountryContext);
 
 
@@ -47,7 +47,7 @@ const Card = () => {
                         </Option>)
                 }
                 <div className="button-container">
-                    <button onClick={generateNewQuestion}>Next </button>
+                    <button onClick={generateNewQuestion}>Next</button>
                 </div>
 
             </div>

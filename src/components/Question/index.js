@@ -1,5 +1,6 @@
 import {useContext, useEffect} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
+import './index.css'
 
 const Question = () => {
     const {randomQuestion, question} = useContext(CountryContext)
@@ -10,7 +11,7 @@ const Question = () => {
     if (!question) return <div>Loading</div>;
 
     return (
-        <div>
+        <div className="question">
             {question}
         </div>
     );

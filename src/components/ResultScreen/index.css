@@ -1,0 +1,24 @@
+.result-screen{
+    @apply flex justify-center flex-col text-center
+    bg-white h-1/2 p-5
+}
+
+.result-screen img{
+    @apply w-1/2 mx-auto mb-14
+}
+
+.result-screen h4{
+    @apply text-2xl w-3/5 mx-auto
+    bg-yellow-100 rounded  sm:w-full sm:py-3
+}
+span{
+    @apply text-green-500 font-bold
+}
+
+.result-screen button{
+    @apply mt-10 bg-pink-200 rounded text-pink-500 font-bold p-4 w-2/5 mx-auto
+    transition
+    hover:bg-pink-400
+    hover:text-white
+    sm:w-full
+}

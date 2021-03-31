@@ -44,7 +44,9 @@ const CountryContextProvider = ({children}) => {
 
     const countryFlagQuestion = () => {
         setQuestion(<div className='question-container'>
-            <img src={randomCountry.flag} alt="country-flag"/>
+            <div className="image-container">
+                <img src={randomCountry.flag} alt="country-flag"/>
+            </div>
             <h5>Which country does this flag belong to?</h5>
         </div>)
         createOptions();

@@ -1,7 +1,4 @@
 
-img {
-    @apply w-4/5 h-4/5 rounded shadow
-}
 
 .options-container{
     @apply flex justify-center
