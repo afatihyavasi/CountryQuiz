@@ -1,7 +1,6 @@
 {
   "short_name": "Country Quiz",
   "name": "Simple Country Quiz",
-
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
