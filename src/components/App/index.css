@@ -1,12 +1,13 @@
-.app{
+.app {
     @apply h-screen justify-center items-center flex px-5 bg-gray-50
 }
 
-@screen sm{
-    body{
+@screen sm {
+    body {
         @apply flex justify-center items-center bg-gray-50 h-screen w-screen
     }
-    .app{
+
+    .app {
         @apply flex  justify-center items-center
         w-96 h-auto p-6
     }

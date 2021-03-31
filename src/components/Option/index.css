@@ -1,11 +1,10 @@
 
-
-.options-container{
+.options-container {
     @apply flex justify-center
     m-3 h-12
 }
 
-.option{
+.option {
     @apply
     bg-purple-100
     rounded
@@ -17,9 +16,10 @@
     hover:bg-purple-300
 }
 
-.true-option{
+.true-option {
     @apply w-full font-bold bg-green-400 text-white w-full rounded hover:bg-green-400  focus-within:outline-none;
 }
-.false-option{
+
+.false-option {
     @apply w-full font-bold bg-red-400 text-white  w-full rounded hover:bg-red-400  focus-within:outline-none;
 }

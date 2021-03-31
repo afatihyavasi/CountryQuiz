@@ -1,4 +1,4 @@
-.card{
+.card {
     @apply w-screen bg-white
     rounded shadow
 }
@@ -9,16 +9,16 @@ h1 {
     font-bold text-blue-800 text-center rounded-t
 }
 
-.container{
+.container {
     @apply p-5
 }
 
-.button-container{
+.button-container {
     @apply flex justify-end mt-5 px-3
 }
 
-.button-container button{
-    @apply  bg-yellow-100 rounded
+.button-container button {
+    @apply bg-yellow-100 rounded
     text-center text-yellow-600 font-bold
     py-2 px-5
     transition

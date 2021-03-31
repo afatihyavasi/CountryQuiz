@@ -1,13 +1,6 @@
 {
   "short_name": "Country Quiz",
   "name": "Simple Country Quiz",
-  "icons": [
-    {
-      "src": "celebrate.svg",
-      "type": "image/svg",
-      "sizes": "512x522"
-    }
-  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

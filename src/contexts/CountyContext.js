@@ -39,7 +39,8 @@ const CountryContextProvider = ({children}) => {
     }
 
     const countryCapitalQuestion = () => {
-        setQuestion(<div className='question-container'><strong>{randomCountry.capital}</strong> is the capital of</div>);
+        setQuestion(<div className='question-container'><strong>{randomCountry.capital}</strong> is the capital of
+        </div>);
         createOptions();
     }
 
@@ -98,7 +99,7 @@ const CountryContextProvider = ({children}) => {
     const values = {
         countries, question, options, setQuestion, setOptions, pickRandomCountry, randomCountry,
         setRandomCountry, randomQuestion, trueCounter, setTrueCounter, questionIndex, setQuestionIndex,
-        backgroundColor, setBackgroundColor, generateNewQuestion,disable,setDisable
+        backgroundColor, setBackgroundColor, generateNewQuestion, disable, setDisable
     }
 
     return (
