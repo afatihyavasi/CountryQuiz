@@ -11,6 +11,9 @@ const CountryContextProvider = ({children}) => {
     const [question, setQuestion] = useState();
     const [options, setOptions] = useState([]);
     const [randomCountry, setRandomCountry] = useState();
+    const [questionIndex, setQuestionIndex] = useState(1);
+    const [trueCounter, setTrueCounter] = useState(0);
+    const [backgroundColor, setBackgroundColor] = useState('');
 
     // Get country list with fetch.
     useEffect(() => {
@@ -27,16 +30,6 @@ const CountryContextProvider = ({children}) => {
         })
     };
 
-    // Create a false option.
-    const createFalseOptions = () => {
-        const options = [];
-        const randomNumber = Math.floor(Math.random() * countries.length);
-        countries.forEach((country, index) => {
-            if (index === randomNumber && randomCountry.name !== country.name)options.push(country.name)
-        })
-        return options[0];
-    }
-
     //Generate random question . Ask country capital or country flag.
     const randomQuestion = () => {
         const randomBoolean = Math.random() < 0.5;
@@ -45,16 +38,26 @@ const CountryContextProvider = ({children}) => {
     }
 
     const countryCapitalQuestion = () => {
-        setQuestion(<div><strong>{randomCountry.capital}</strong> is the capital of</div>);
+        setQuestion(<div className='question-container'><strong>{randomCountry.capital}</strong> is the capital of</div>);
         createOptions();
     }
 
     const countryFlagQuestion = () => {
-        setQuestion(<>
+        setQuestion(<div className='question-container'>
             <img src={randomCountry.flag} alt="country-flag"/>
             <h5>Which country does this flag belong to?</h5>
-        </>)
+        </div>)
         createOptions();
+    }
+
+    // Create a false option.
+    const createFalseOptions = () => {
+        const options = [];
+        const randomNumber = Math.floor(Math.random() * countries.length);
+        countries.forEach((country, index) => {
+            if (index === randomNumber && randomCountry.name !== country.name) options.push(country.name)
+        })
+        return options[0];
     }
 
     //Create options.
@@ -63,34 +66,35 @@ const CountryContextProvider = ({children}) => {
             {
                 name: randomCountry.name,
                 truthy: true,
-            } ,
+            },
             {
-                name : createFalseOptions(),
+                name: createFalseOptions(),
                 truthy: false
             },
             {
-                name : createFalseOptions(),
+                name: createFalseOptions(),
                 truthy: false
             },
             {
-                name : createFalseOptions(),
+                name: createFalseOptions(),
                 truthy: false
             }
-
         ].sort(() => .5 - Math.random()));
-
     }
 
+    // Generate new question.
+    const generateNewQuestion = () => {
+        setBackgroundColor('');
+        setQuestionIndex(questionIndex + 1);
+        pickRandomCountry(countries);
+        randomQuestion();
+    }
+
+
     const values = {
-        countries,
-        question,
-        options,
-        setQuestion,
-        setOptions,
-        pickRandomCountry,
-        randomCountry,
-        setRandomCountry,
-        randomQuestion,
+        countries, question, options, setQuestion, setOptions, pickRandomCountry, randomCountry,
+        setRandomCountry, randomQuestion, trueCounter, setTrueCounter, questionIndex, setQuestionIndex,
+        backgroundColor, setBackgroundColor, generateNewQuestion
     }
 
     return (

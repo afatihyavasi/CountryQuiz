@@ -1,21 +1,28 @@
 
 img {
     @apply w-4/5 h-4/5 rounded shadow
-
 }
 
-button {
-    @apply w-4/5
-    mb-2
-    shadow
-    border border-blue-800
-    bg-blue-50 text-blue-800
+.options-container{
+    @apply flex justify-center
+    m-3 h-12
+}
+
+.option{
+    @apply
+    bg-purple-100
     rounded
+    text-purple-500
+    w-full
+    font-bold
     transition
+    focus-within:outline-none
+    hover:bg-purple-300
+}
 
-
-    hover:bg-blue-600
-    hover:text-gray-100
-
-
+.true-option{
+    @apply w-full font-bold bg-green-400 text-white w-full rounded hover:bg-green-400  focus-within:outline-none;
+}
+.false-option{
+    @apply w-full font-bold bg-red-400 text-white  w-full rounded hover:bg-red-400  focus-within:outline-none;
 }

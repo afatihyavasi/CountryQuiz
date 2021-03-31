@@ -1,13 +1,30 @@
-
-.card h1 {
-    @apply text-4xl
-    my-5
-}
-
-.container {
-    @apply
-    bg-white
-    w-96 h-96 p-8
+.card{
+    @apply w-screen bg-white
     rounded shadow
 
 }
+
+h1 {
+    @apply mb-5 p-5
+    bg-blue-200
+    font-bold text-blue-800 text-center rounded-t
+}
+
+.container{
+    @apply p-5
+}
+
+.button-container{
+    @apply flex justify-end mt-5 px-3
+}
+
+.button-container button{
+    @apply  bg-yellow-100 rounded
+    text-center text-yellow-600 font-bold
+    py-2 px-5
+    transition
+    hover:bg-yellow-300
+    focus-within:outline-none
+    hover:text-white
+}
+

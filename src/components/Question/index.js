@@ -2,12 +2,12 @@ import {useContext, useEffect} from 'react';
 import {CountryContext} from "../../contexts/CountyContext";
 
 const Question = () => {
-    const {randomQuestion,question} = useContext(CountryContext)
+    const {randomQuestion, question} = useContext(CountryContext)
     useEffect(() => {
         randomQuestion();
-    },[])
+    }, [])
 
-    if(!question) return <div>Loading</div>;
+    if (!question) return <div>Loading</div>;
 
     return (
         <div>
