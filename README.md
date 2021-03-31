@@ -5,8 +5,8 @@
 
 
 ## Built With
-- ```Reactjs```
-- ```TailwindCSS```
+- [ReactJS](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 
 ## How to use 
 
