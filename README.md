@@ -9,7 +9,7 @@
 
 ## Overview
 
-Asks questions about flags or capitals of random countries. Get countries with API and choose someone then generate random question about country.
+Asks questions about flags or capitals of random countries. Get countries with API and choose someone then generate random questions about the country.
 
 
 ## Built With
