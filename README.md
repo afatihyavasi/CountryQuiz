@@ -1,6 +1,7 @@
 # Country Quiz
 
-![Browser=Safari, Theme=Dark](https://user-images.githubusercontent.com/22716658/113213968-82555900-9281-11eb-8b3b-6a94a40a8636.png)
+![Frame 1](https://user-images.githubusercontent.com/22716658/122125715-7c5f2500-ce39-11eb-998a-f35ba97c98ed.jpeg)
+
 
 ## Live Demo
 
